@@ -551,8 +551,10 @@ body:not(.intro-locked) .section-nav {
 .scroll-cue {
   position: absolute;
   bottom: 18px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  width: fit-content;
+  margin: 0 auto;
   z-index: 6;
   display: flex;
   flex-direction: column;
@@ -1107,7 +1109,7 @@ button.cal-cell.is-selected {
 }
 
 /* =========================================================
-   SECTION 5: MAALAI MAATRAL TEMPLE DIORAMA
+   SECTION 5: MAALAI MAATRAL LAYERED ANIMATED TEMPLE DIORAMA
    ========================================================= */
 .sec-diorama {
   background: #74bbf7;
@@ -1116,6 +1118,7 @@ button.cal-cell.is-selected {
 
 .diorama-frame {
   position: relative;
+  aspect-ratio: 720 / 1234;
   overflow: hidden;
   border-top: 3px solid #f7f0e2;
   border-bottom: 3px solid #f7f0e2;
@@ -1124,17 +1127,129 @@ button.cal-cell.is-selected {
 .diorama-img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   will-change: transform;
 }
 
+/* Warm temple sunbeam glow */
+.diorama-sunbeams {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 24%, rgba(255, 232, 175, 0.28) 0%, rgba(255, 214, 130, 0.08) 42%, transparent 72%);
+  animation: sunbeamPulse 5.2s ease-in-out infinite alternate;
+}
+
+@keyframes sunbeamPulse {
+  0% { opacity: 0.55; transform: scale(0.98); }
+  100% { opacity: 0.95; transform: scale(1.03); }
+}
+
+/* Ground contact shadow beneath repositioned couple */
+.diorama-couple-shadow {
+  position: absolute;
+  left: 34.5%;
+  top: 84.1%;
+  width: 30.8%;
+  height: 3.4%;
+  z-index: 3;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(64, 34, 14, 0.44) 0%, rgba(64, 34, 14, 0.16) 55%, transparent 78%);
+  filter: blur(2px);
+}
+
+/* Couple standing on the courtyard floor */
+.diorama-couple {
+  position: absolute;
+  left: 33.05%;
+  top: 58.35%;
+  width: 33.61%;
+  height: auto;
+  z-index: 4;
+  pointer-events: none;
+  transform-origin: 50% 95%;
+  filter: drop-shadow(0 8px 12px rgba(58, 30, 12, 0.22));
+  animation: coupleBreathe 4.8s ease-in-out infinite;
+}
+
+@keyframes coupleBreathe {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-1.5px) scale(1.007); }
+}
+
+/* Swaying Banana Leaves */
+.diorama-leaf {
+  position: absolute;
+  top: 27.96%;
+  height: auto;
+  z-index: 5;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.diorama-leaf-left {
+  left: -1%;
+  width: 31.8%;
+  transform-origin: 0% 62%;
+  animation: leafSwayLeft 4.4s ease-in-out infinite;
+}
+
+.diorama-leaf-right {
+  right: -1%;
+  width: 32.1%;
+  transform-origin: 100% 62%;
+  animation: leafSwayRight 4.9s ease-in-out infinite;
+}
+
+@keyframes leafSwayLeft {
+  0%, 100% { transform: rotate(0deg) translate3d(0, 0, 0); }
+  50% { transform: rotate(-2.4deg) translate3d(2px, 2px, 0); }
+}
+
+@keyframes leafSwayRight {
+  0%, 100% { transform: rotate(0deg) translate3d(0, 0, 0); }
+  50% { transform: rotate(2.4deg) translate3d(-2px, 2px, 0); }
+}
+
+/* Foreground Pink Lotuses */
+.diorama-lotus {
+  position: absolute;
+  top: 78.2%;
+  width: 27.2%;
+  height: auto;
+  z-index: 6;
+  pointer-events: none;
+  animation: lotusBreath 5.6s ease-in-out infinite;
+}
+
+.diorama-lotus-left {
+  left: -0.5%;
+  transform-origin: 20% 85%;
+}
+
+.diorama-lotus-right {
+  right: -0.5%;
+  transform-origin: 80% 85%;
+  animation-delay: 1.4s;
+}
+
+@keyframes lotusBreath {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.028) rotate(1.1deg); }
+}
+
+/* Brass Oil Lamp Glows & Flickering Flames */
 .diorama-lamp-glow {
   position: absolute;
   bottom: 24%;
-  width: 90px;
-  height: 90px;
+  width: 96px;
+  height: 96px;
+  z-index: 5;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 205, 85, 0.42) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 205, 85, 0.45) 0%, transparent 70%);
   pointer-events: none;
   animation: lampFlicker 2.6s ease-in-out infinite alternate;
 }
@@ -1142,24 +1257,102 @@ button.cal-cell.is-selected {
 .diorama-lamp-glow.left { left: 2%; }
 .diorama-lamp-glow.right { right: 2%; animation-delay: 0.9s; }
 
-@keyframes lampFlicker {
-  0% { opacity: 0.45; transform: scale(0.92); }
-  100% { opacity: 0.9; transform: scale(1.08); }
+.diorama-flame {
+  position: absolute;
+  width: 11px;
+  height: 18px;
+  z-index: 6;
+  pointer-events: none;
+  border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+  background: radial-gradient(circle at 50% 62%, #fffce6 0%, #ffd24d 52%, rgba(255, 145, 24, 0) 100%);
+  filter: blur(0.6px);
+  animation: flameDance 1.5s ease-in-out infinite alternate;
 }
 
+.diorama-flame.f1 { left: 3.9%; top: 58.6%; }
+.diorama-flame.f2 { left: 12.6%; top: 58.2%; animation-delay: 0.4s; }
+.diorama-flame.f3 { left: 84.3%; top: 58.4%; animation-delay: 0.7s; }
+.diorama-flame.f4 { left: 93.1%; top: 58.6%; animation-delay: 1.1s; }
+
+@keyframes flameDance {
+  0% { transform: scale(0.92, 0.96) skewX(-2deg); opacity: 0.75; }
+  100% { transform: scale(1.12, 1.16) skewX(2deg); opacity: 1; }
+}
+
+@keyframes lampFlicker {
+  0% { opacity: 0.45; transform: scale(0.92); }
+  100% { opacity: 0.92; transform: scale(1.08); }
+}
+
+/* Gentle Ambient Falling Petals inside Diorama */
+.diorama-ambient-petals {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.diorama-ambient-petals span {
+  position: absolute;
+  top: -8%;
+  width: 9px;
+  height: 12px;
+  border-radius: 70% 30% 70% 30%;
+  background: linear-gradient(135deg, #f592a5 0%, #e04d6d 100%);
+  opacity: 0.78;
+  animation: dioramaPetalFall 7.5s linear infinite;
+}
+
+.diorama-ambient-petals span:nth-child(odd) {
+  background: linear-gradient(135deg, #ffcf56 0%, #f09526 100%);
+  width: 8px;
+  height: 10px;
+}
+
+.diorama-ambient-petals span:nth-child(1) { left: 16%; animation-duration: 7.2s; animation-delay: 0s; }
+.diorama-ambient-petals span:nth-child(2) { left: 28%; animation-duration: 8.6s; animation-delay: 1.4s; }
+.diorama-ambient-petals span:nth-child(3) { left: 41%; animation-duration: 6.9s; animation-delay: 2.8s; }
+.diorama-ambient-petals span:nth-child(4) { left: 53%; animation-duration: 8.1s; animation-delay: 0.7s; }
+.diorama-ambient-petals span:nth-child(5) { left: 64%; animation-duration: 7.6s; animation-delay: 3.5s; }
+.diorama-ambient-petals span:nth-child(6) { left: 76%; animation-duration: 9.0s; animation-delay: 2.1s; }
+.diorama-ambient-petals span:nth-child(7) { left: 35%; animation-duration: 7.8s; animation-delay: 4.4s; }
+.diorama-ambient-petals span:nth-child(8) { left: 82%; animation-duration: 6.6s; animation-delay: 5.1s; }
+
+@keyframes dioramaPetalFall {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.82;
+  }
+  85% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translate3d(26px, 520px, 0) rotate(290deg);
+    opacity: 0;
+  }
+}
+
+/* Properly centered top caption banner (no translateX overridden by .anim-rise) */
 .diorama-caption {
   position: absolute;
   top: 14px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   width: 84%;
+  margin: 0 auto;
+  z-index: 9;
   padding: 10px 14px;
   border-radius: 12px;
-  background: rgba(54, 14, 20, 0.72);
+  background: rgba(54, 14, 20, 0.76);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(224, 184, 107, 0.45);
   text-align: center;
   color: #fff6e0;
+  box-shadow: 0 10px 24px rgba(24, 6, 9, 0.35);
 }
 
 .diorama-tag {
