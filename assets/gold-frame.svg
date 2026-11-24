@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none">
+  <defs>
+    <linearGradient id="frameOuter" x1="0" y1="0" x2="400" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f2d68b"/>
+      <stop offset="28%" stop-color="#c69238"/>
+      <stop offset="55%" stop-color="#f8e3a3"/>
+      <stop offset="80%" stop-color="#a87424"/>
+      <stop offset="100%" stop-color="#e5be6a"/>
+    </linearGradient>
+    <linearGradient id="frameInner" x1="400" y1="0" x2="0" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#9b691d"/>
+      <stop offset="50%" stop-color="#ebd081"/>
+      <stop offset="100%" stop-color="#875714"/>
+    </linearGradient>
+    <mask id="apertureMask">
+      <rect width="400" height="500" fill="white"/>
+      <rect x="44" y="48" width="312" height="404" rx="4" fill="black"/>
+    </mask>
+  </defs>
+  <!-- Solid gold frame border with transparent center -->
+  <g mask="url(#apertureMask)">
+    <rect x="14" y="16" width="372" height="468" rx="14" fill="url(#frameOuter)"/>
+    <rect x="24" y="26" width="352" height="448" rx="10" stroke="#7d4f10" stroke-width="2" fill="none"/>
+    <rect x="31" y="34" width="338" height="432" rx="7" stroke="#fff2c2" stroke-width="1.5" fill="none"/>
+    <rect x="38" y="42" width="324" height="416" rx="5" fill="url(#frameInner)"/>
+  </g>
+  <!-- Inner shadow bevel -->
+  <rect x="44" y="48" width="312" height="404" rx="4" stroke="#6f440c" stroke-width="2.5"/>
+  <!-- Top & Bottom Baroque Crest Ornaments -->
+  <path d="M148 22 C164 6, 184 4, 200 18 C216 4, 236 6, 252 22 C236 28, 222 34, 200 34 C178 34, 164 28, 148 22 Z" fill="url(#frameOuter)" stroke="#7d4f10" stroke-width="1.4"/>
+  <circle cx="200" cy="18" r="5" fill="#fff2c2" stroke="#8a5a14" stroke-width="1.2"/>
+  <path d="M148 478 C164 494, 184 496, 200 482 C216 496, 236 494, 252 478 C236 472, 222 466, 200 466 C178 466, 164 472, 148 478 Z" fill="url(#frameOuter)" stroke="#7d4f10" stroke-width="1.4"/>
+  <circle cx="200" cy="482" r="5" fill="#fff2c2" stroke="#8a5a14" stroke-width="1.2"/>
+  <!-- 4 Ornate Corner Scrolls -->
+  <g fill="url(#frameOuter)" stroke="#7d4f10" stroke-width="1.3">
+    <path d="M8 38 C8 12, 12 8, 38 8 C52 8, 60 18, 46 26 C34 24, 24 34, 26 46 C18 60, 8 52, 8 38 Z"/>
+    <path d="M392 38 C392 12, 388 8, 362 8 C348 8, 340 18, 354 26 C366 24, 376 34, 374 46 C382 60, 392 52, 392 38 Z"/>
+    <path d="M8 462 C8 488, 12 492, 38 492 C52 492, 60 482, 46 474 C34 476, 24 466, 26 454 C18 440, 8 448, 8 462 Z"/>
+    <path d="M392 462 C392 488, 388 492, 362 492 C348 492, 340 482, 354 474 C366 476, 376 466, 374 454 C382 440, 392 448, 392 462 Z"/>
+  </g>
+  <!-- Beaded filigree accents along sides -->
+  <circle cx="22" cy="145" r="3" fill="#fff0ba"/>
+  <circle cx="22" cy="250" r="4.5" fill="#fff0ba"/>
+  <circle cx="22" cy="355" r="3" fill="#fff0ba"/>
+  <circle cx="378" cy="145" r="3" fill="#fff0ba"/>
+  <circle cx="378" cy="250" r="4.5" fill="#fff0ba"/>
+  <circle cx="378" cy="355" r="3" fill="#fff0ba"/>
+</svg>

@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="600" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fbf3e3"/>
+      <stop offset="60%" stop-color="#f5e6cb"/>
+      <stop offset="100%" stop-color="#ead2aa"/>
+    </linearGradient>
+    <linearGradient id="archGold" x1="120" y1="40" x2="480" y2="340" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#dfb76c"/>
+      <stop offset="50%" stop-color="#b88435"/>
+      <stop offset="100%" stop-color="#8c5a18"/>
+    </linearGradient>
+    <linearGradient id="brassGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fae29c"/>
+      <stop offset="55%" stop-color="#cc9534"/>
+      <stop offset="100%" stop-color="#8b5b15"/>
+    </linearGradient>
+    <linearGradient id="sareeCoral" x1="200" y1="250" x2="290" y2="470" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#df6d63"/>
+      <stop offset="65%" stop-color="#c4473e"/>
+      <stop offset="100%" stop-color="#9e2f28"/>
+    </linearGradient>
+    <linearGradient id="silkIvory" x1="315" y1="230" x2="405" y2="470" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fffaf0"/>
+      <stop offset="100%" stop-color="#eadbc2"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="32%" r="48%">
+      <stop offset="0%" stop-color="#fff7de" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#f5e6cb" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sunlit Temple Courtyard Background -->
+  <rect width="600" height="600" fill="url(#bgGrad)"/>
+  <circle cx="300" cy="210" r="240" fill="url(#sunGlow)"/>
+
+  <!-- Carved Stone Mandapam Arch & Pillars -->
+  <rect x="64" y="88" width="44" height="430" rx="4" fill="#e5d0ad" stroke="#c3a474" stroke-width="2"/>
+  <rect x="492" y="88" width="44" height="430" rx="4" fill="#e5d0ad" stroke="#c3a474" stroke-width="2"/>
+  <rect x="56" y="485" width="60" height="32" rx="3" fill="#d7be93"/>
+  <rect x="484" y="485" width="60" height="32" rx="3" fill="#d7be93"/>
+  <path d="M98 155 C120 72, 215 44, 300 44 C385 44, 480 72, 502 155" stroke="url(#archGold)" stroke-width="14" stroke-linecap="round"/>
+  <path d="M118 158 C138 92, 222 68, 300 68 C378 68, 462 92, 482 158" stroke="#f7e7c4" stroke-width="3" stroke-dasharray="6 5"/>
+
+  <!-- Hanging Jasmine & Marigold Garlands -->
+  <path d="M126 122 Q213 185 300 128 Q387 185 474 122" stroke="#f9f7ef" stroke-width="11" stroke-linecap="round" fill="none"/>
+  <path d="M126 122 Q213 185 300 128 Q387 185 474 122" stroke="#e4c58e" stroke-width="2" stroke-dasharray="2 10" stroke-linecap="round" fill="none"/>
+  <circle cx="170" cy="146" r="8" fill="#f39c2b"/>
+  <circle cx="215" cy="158" r="9" fill="#f7b731"/>
+  <circle cx="260" cy="147" r="8" fill="#f39c2b"/>
+  <circle cx="300" cy="130" r="10" fill="#e26743"/>
+  <circle cx="340" cy="147" r="8" fill="#f39c2b"/>
+  <circle cx="385" cy="158" r="9" fill="#f7b731"/>
+  <circle cx="430" cy="146" r="8" fill="#f39c2b"/>
+  <!-- Hanging jasmine strands -->
+  <g stroke="#fffdf7" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 9">
+    <line x1="150" y1="138" x2="150" y2="228"/>
+    <line x1="215" y1="166" x2="215" y2="215"/>
+    <line x1="385" y1="166" x2="385" y2="215"/>
+    <line x1="450" y1="138" x2="450" y2="228"/>
+  </g>
+  <circle cx="150" cy="236" r="5" fill="#d9534f"/>
+  <circle cx="450" cy="236" r="5" fill="#d9534f"/>
+
+  <!-- Floor & Brass Kuthuvilakku Lamps -->
+  <rect x="0" y="488" width="600" height="112" fill="#e6cfa9"/>
+  <ellipse cx="300" cy="496" rx="220" ry="26" fill="#f1dfc0"/>
+  <!-- Left Lamp -->
+  <path d="M126 492 L138 492 L134 405 L130 405 Z" fill="url(#brassGrad)"/>
+  <ellipse cx="132" cy="492" rx="18" ry="5" fill="#b78128"/>
+  <ellipse cx="132" cy="404" rx="14" ry="5" fill="#d8a23c"/>
+  <path d="M132 384 C138 394, 138 402, 132 404 C126 402, 126 394, 132 384 Z" fill="#ffcf4d"/>
+  <!-- Right Lamp -->
+  <path d="M462 492 L474 492 L470 405 L466 405 Z" fill="url(#brassGrad)"/>
+  <ellipse cx="468" cy="492" rx="18" ry="5" fill="#b78128"/>
+  <ellipse cx="468" cy="404" rx="14" ry="5" fill="#d8a23c"/>
+  <path d="M468 384 C474 394, 474 402, 468 404 C462 402, 462 394, 468 384 Z" fill="#ffcf4d"/>
+
+  <!-- Bride (Left) in Coral-Pink & Gold Kanjeevaram Silk -->
+  <g>
+    <!-- Hair & Jasmine Veni -->
+    <ellipse cx="232" cy="206" rx="26" ry="28" fill="#2c1d19"/>
+    <path d="M210 218 Q232 232 254 218" stroke="#fffef8" stroke-width="8" stroke-linecap="round" stroke-dasharray="2 7"/>
+    <!-- Face & Neck -->
+    <circle cx="232" cy="212" r="20" fill="#d99f77"/>
+    <path d="M225 210 Q228 208 231 210" stroke="#4a2c20" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M237 210 Q240 208 243 210" stroke="#4a2c20" stroke-width="1.6" stroke-linecap="round"/>
+    <circle cx="234" cy="203" r="2" fill="#b82424"/>
+    <path d="M230 220 Q235 224 240 220" stroke="#9e3d36" stroke-width="1.6" stroke-linecap="round"/>
+    <!-- Gold Jhumka & Necklace -->
+    <circle cx="214" cy="222" r="4" fill="#eab949"/>
+    <path d="M219 240 Q232 252 246 240" stroke="#f0c351" stroke-width="4" stroke-linecap="round"/>
+    <!-- Saree Body & Gold Zari Pallu -->
+    <path d="M204 246 C192 310, 182 415, 178 485 L286 485 C284 405, 274 305, 260 246 Z" fill="url(#sareeCoral)"/>
+    <path d="M204 246 L262 365 L284 365 L245 246 Z" fill="#e6b85c" opacity="0.88"/>
+    <path d="M180 468 H286" stroke="#f2c96b" stroke-width="9"/>
+    <!-- Hands holding Tambulam edge -->
+    <path d="M250 280 Q276 318 286 346" stroke="#d99f77" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <!-- Groom (Right) in Ivory Veshti & Gold Angavastram -->
+  <g>
+    <ellipse cx="366" cy="196" rx="23" ry="22" fill="#251916"/>
+    <circle cx="366" cy="204" r="20" fill="#cf936c"/>
+    <path d="M356 202 Q359 200 362 202" stroke="#4a2c20" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M369 202 Q372 200 375 202" stroke="#4a2c20" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M361 213 Q366 217 371 213" stroke="#8a4033" stroke-width="1.6" stroke-linecap="round"/>
+    <!-- Kurta & Veshti -->
+    <path d="M336 238 C326 300, 322 410, 320 485 L414 485 C412 405, 408 300, 398 238 Z" fill="url(#silkIvory)" stroke="#dfcca8" stroke-width="1.5"/>
+    <!-- Gold Border Angavastram -->
+    <path d="M342 238 L382 365 L398 358 L358 238 Z" fill="#f7eedb" stroke="#d8a846" stroke-width="4"/>
+    <path d="M322 468 H414" stroke="#d8a846" stroke-width="8"/>
+    <path d="M338 272 Q318 312 314 344" stroke="#cf936c" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <!-- Ornate Brass Tambulam Betrothal Platter & Kalasham in Center Foreground -->
+  <g>
+    <!-- Low Carved Teak Pedestal -->
+    <rect x="242" y="424" width="116" height="62" rx="6" fill="#7c4724" stroke="#b9823c" stroke-width="2"/>
+    <rect x="252" y="434" width="96" height="42" rx="3" stroke="#d8a75b" stroke-width="1.5" fill="#693b1d"/>
+    <!-- Brass Platter -->
+    <ellipse cx="300" cy="422" rx="74" ry="15" fill="url(#brassGrad)" stroke="#8c5a18" stroke-width="2"/>
+    <!-- Folded Kanjeevaram Saree Gift Box -->
+    <rect x="248" y="388" width="54" height="28" rx="4" fill="#2e7d5b" stroke="#f0c351" stroke-width="2.5"/>
+    <line x1="275" y1="388" x2="275" y2="416" stroke="#f0c351" stroke-width="3"/>
+    <!-- Brass Kalasham with Coconut & Mango Leaves -->
+    <path d="M312 396 C306 410, 314 420, 326 420 C338 420, 346 410, 340 396 Z" fill="url(#brassGrad)"/>
+    <path d="M314 388 L326 376 L338 388 Z" fill="#5e9e49"/>
+    <circle cx="326" cy="389" r="9" fill="#8b5a2b"/>
+    <!-- Betel Leaves & Flowers -->
+    <ellipse cx="298" cy="414" rx="14" ry="7" fill="#4f8f41"/>
+    <circle cx="290" cy="412" r="6" fill="#f39c2b"/>
+    <circle cx="304" cy="415" r="5" fill="#fffdf7"/>
+  </g>
+</svg>
